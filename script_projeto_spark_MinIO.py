@@ -2,14 +2,11 @@ from os.path import abspath
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import *
 
-# setup da aplicação Spark
-# documentação oficial 
-
 spark = SparkSession \
     .builder \
     .appName("job-1-spark") \
     .config("spark.sql.warehouse.dir", abspath('spark-warehouse')) \
-    .config("fs.s3a.endpoint", "http://192.168.0.80:9000") \
+    .config("fs.s3a.endpoint", "http://192.xxx.xxx.xxx.:9000") \
     .config("fs.s3a.access.key", "minioadmin")\
     .config("fs.s3a.secret.key", "minioadmin")\
     .config("fs.s3a.impl","org.apache.hadoop.fs.s3a.S3AFileSystem") \
